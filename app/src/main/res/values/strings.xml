@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Uygulama</string>
+    <string name="app_main_header">Logo</string>
+    <string name="app_buttons_login">Giriş Yap</string>
+    <string name="app_buttons_sign_up">Kayıt Ol</string>
+    <string name="app_buttons_stu_info">201813709066 - Işıl Vatansever</string>
 </resources>
