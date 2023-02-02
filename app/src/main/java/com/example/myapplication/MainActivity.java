@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -27,21 +29,25 @@ public class MainActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("users");
-        String userid = myRef.push().getKey();
-        myRef.child(userid).setValue("deneme");
-       /* myRef.setValue("Hello, World!");
-        myRef.addValueEventListener(new ValueEventListener() {
+        //String userid = myRef.push().getKey();
+        //Users user = new Users("Işıl Vatansever", "vatanseverisil@gmail.com", "123");
+        //myRef.child(userid).setValue(user);
+        Button register  = findViewById(R.id.btn_register);
+        Button login     = findViewById(R.id.btn_login);
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                Log.d(TAG, "Value is: " + value);
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intent);
             }
-
+        });
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCancelled(DatabaseError error) {
-                Log.w(TAG, "Failed to read value.", error.toException());
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intent);
             }
-        });*/
+        });
 
     }
 
